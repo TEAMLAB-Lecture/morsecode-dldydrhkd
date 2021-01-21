@@ -297,8 +297,11 @@ def encoding_sentence(english_sentence):
     li = english_sentence
     for i in ['?',',','.','!']:
         li = li.replace(i, '')
+    li = li.split()
     for i in li:
-        result = result + encoding_character(i) + ' '
+        for j in i:
+            result = result + encoding_character(j)+' '
+        result = result + ' '
     result = result.strip()
     return result
     # ==================================
